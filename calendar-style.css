@@ -1,17 +1,12 @@
-.v-application--wrap {
-    min-height: auto;
+.calendar-booking {
+
 }
 
-.v-application--wrap .row {
-    width: 100%;
-    margin: 0;
-}
-
-.v-picker__title {
+.calendar-booking .v-picker__title {
     display: none;
 }
 
-.v-picker__body {
+.calendar-booking .v-picker__body {
     max-width: 500px;
     margin-left: -10px;
     margin-right: -10px;
@@ -19,7 +14,7 @@
     /*overflow: inherit;*/
 }
 
-.v-date-picker-table {
+.calendar-booking .v-date-picker-table {
     height: auto;
     padding-left: 0;
     padding-right: 0;
@@ -28,35 +23,35 @@
     margin-bottom: 20px;
 }
 
-.v-application .green-color.lighten-1 {
+.calendar-booking .v-btn.green-color.lighten-1 {
     background-color: #84D444 !important;
     border-color: #84D444 !important;
 }
 
-.v-btn--rounded {
+.calendar-booking .v-btn--rounded {
     border-radius: 0;
 }
 
-.v-date-picker-table .v-btn {
+.calendar-booking .v-date-picker-table .v-btn {
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
 }
 
-.v-date-picker-table--date td {
+.calendar-booking .v-date-picker-table--date td {
     height: 61px;
     border-right: 1px solid #DFDFDF;
 }
 
-.v-date-picker-table--date tr {
+.calendar-booking .v-date-picker-table--date tr {
     border-bottom: 1px solid #DFDFDF;
 }
 
-.v-date-picker-table--date tr:last-child {
+.calendar-booking .v-date-picker-table--date tr:last-child {
     border-bottom: none;
 }
 
-.v-date-picker-table--date .v-btn {
+.calendar-booking .v-date-picker-table--date .v-btn {
     width: 100%;
     height: 100%;
     justify-content: flex-start;
@@ -65,16 +60,16 @@
     padding-left: 7px;
 }
 
-.v-btn--outlined {
+.calendar-booking .v-btn--outlined {
     outline: none;
     border: none;
 }
 
-.v-date-picker-table--date thead tr {
+.calendar-booking .v-date-picker-table--date thead tr {
     background: #F3F3F3;
 }
 
-.v-date-picker-table--date thead tr:last-child {
+.calendar-booking .v-date-picker-table--date thead tr:last-child {
     border-bottom: 1px solid #DFDFDF;
 }
 
@@ -83,18 +78,18 @@ button:focus {
     border: none;
 }
 
-.v-date-picker-table table {
+.calendar-booking .v-date-picker-table table {
     background: rgba(255, 255, 255, .7);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     overflow: hidden;
 }
 
-.v-picker {
+.calendar-booking.v-picker {
     box-shadow: none;
 }
 
-.v-date-picker-table th {
+.calendar-booking .v-date-picker-table th {
     text-align: left;
     padding-left: 8px;
     font-weight: 600;
@@ -104,7 +99,7 @@ button:focus {
     color: #000000 !important;
 }
 
-.v-date-picker-header__value button {
+.calendar-booking .v-date-picker-header__value button {
     font-weight: bold;
     font-size: 20px;
     line-height: 24px;
@@ -113,19 +108,19 @@ button:focus {
     padding: 0;
 }
 
-.v-date-picker-header {
+.calendar-booking .v-date-picker-header {
     padding-top: 0;
     padding-bottom: 13px;
 }
 
-.v-date-picker-header .v-btn {
+.calendar-booking .v-date-picker-header .v-btn {
     border: 1px solid #D45544;
     border-radius: 50%;
     width: 29px;
     height: 29px;
 }
 
-.v-date-picker-header .v-icon {
+.calendar-booking .v-date-picker-header .v-icon {
     color: #777777;
 }
 
@@ -143,23 +138,23 @@ button:focus {
 }
 
 @media (max-width: 575.98px) {
-    .v-date-picker-table .v-btn {
+    .calendar-booking .v-date-picker-table .v-btn {
         font-size: 14px;
         line-height: 17px;
         padding-top: 6px;
         padding-left: 5px;
     }
 
-    .v-date-picker-table--date td {
+    .calendar-booking .v-date-picker-table--date td {
         height: 42px;
     }
 
-    .v-date-picker-header__value button {
+    .calendar-booking .v-date-picker-header__value button {
         font-size: 16px;
         line-height: 19px;
     }
 
-    .v-date-picker-header .v-btn {
+    .calendar-booking .v-date-picker-header .v-btn {
         width: 21px;
         height: 21px;
     }
@@ -168,7 +163,7 @@ button:focus {
         font-size: 18px;
     }
 
-    .v-date-picker-table th {
+    .calendar-booking .v-date-picker-table th {
         font-size: 12px;
     }
 }
