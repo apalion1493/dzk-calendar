@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Прыжок с парашютом в тандеме с инструктором</title>
+    <meta name="keywords" content=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Appended styles for site -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="style.css" rel="stylesheet">
+    <link href="calendar-style.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" class="header header_reservation section">
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-xl-6 col-9">
+                <div class="header__wrapper">
+                    <a class="main-logo header__logo" href="#"></a>
+                    <div class="header__feedback">
+                        <a class="header__feedback-phone" href="tel:+79381555550">+7 938-1-55555-0</a>
+                        <a href="#" class="header__feedback-messenger">
+                            <i class="icon-telegram"></i>
+                        </a>
+                        <a href="#" class="header__feedback-messenger">
+                            <i class="icon-viber"></i>
+                        </a>
+                    </div>
+                    <div class="header__calendar">
+                        <button type="button" class="header__calendar-icon calendar-icon"></button>
+                        <span class="header__calendar-alertCircle"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-3">
+                <div class="header__nav">
+                    <ul class="header__nav-list header__nav-list-dt">
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#">ПРЫЖКИ С ПАРАШЮТОМ</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#">СЕРТИФИКАТЫ</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a class="header__nav-link" href="#">ОБУЧЕНИЕ AFF</a>
+                        </li>
+
+                        <li class="header__nav-list-mob">
+                            <a href="tel:+79381555550">+7 938-1-55555-0</a>
+                        </li>
+                    </ul>
+
+                    <div id="burger" class="burger header__nav-burger">
+                        <span class="burger__line burger__line-1"></span>
+                        <span class="burger__line burger__line-2"></span>
+                        <span class="burger__line burger__line-3"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul id="header__nav-list-mob" class="header__nav-list header__nav-list-mob">
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="#">ПРЫЖКИ С ПАРАШЮТОМ</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="#">СЕРТИФИКАТЫ</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="#">ОБУЧЕНИЕ AFF</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="#">О КЛУБЕ</a>
+            </li>
+
+            <li class="header__nav-list-mob-tel">
+                <a href="tel:+79381555550">+7 938-1-55555-0</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div id="app">
+    <main id="main" class="main main_index">
+        <section id="jump-booking" class="section jump-booking">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-8">
+                        <div class="jump-booking__wrapper">
+                            <h2 class="h2 jump-booking__h2">Бронирование прыжка</h2>
+                            <div class="row jump-booking__step pb-5">
+                                <div class="col-12">
+                                    <div class="jump-booking__step-header">
+                                        <span class="jump-booking__step-title">01. дата и время</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 pt-0">
+                                    <v-app id="inspire">
+                                        <v-row justify="space-around">
+                                            <v-date-picker v-model="picker2" color="green-color lighten-1" min="2020-05-15" max="2020-06-15" header-color="primary"></v-date-picker>
+                                        </v-row>
+                                    </v-app>
+                                </div>
+                                <div class="col-xl-5 mt-4 pt-3 pt-md-0 mt-md-5 mt-xl-0 pl-xl-0">
+                                    <div class="jump-time jump-time-section">
+                                        <span class="jump-time__title">Время прыжка</span>
+                                        <div class="jump-time__container">
+                                            <div class="jump-time__header">
+                                                <div class="jump-time__header-block">
+                                                    <span class="jump-time__header-item jump-time__header-time">Время</span>
+                                                    <span class="jump-time__header-item jump-time__header-type">Тип услуги</span>
+                                                    <span class="jump-time__header-item jump-time__header-places">Кол-во мест</span>
+                                                </div>
+                                            </div>
+                                            <div class="jump-time__body">
+                                                <div class="jump-time-block inactive">
+                                                    <span class="jump-time-block__item jump-time-block__time">11:00</span>
+                                                    <span class="jump-time-block__item jump-time-block__type">Прыжок в тандеме</span>
+                                                    <span class="jump-time-block__item jump-time-block__places"><span>10 из 12</span> <i></i></span>
+                                                </div>
+                                                <div class="jump-time-block">
+                                                    <span class="jump-time-block__item jump-time-block__time">11:00</span>
+                                                    <span class="jump-time-block__item jump-time-block__type">Прыжок в тандеме</span>
+                                                    <span class="jump-time-block__item jump-time-block__places"><span>10 из 12</span> <i></i></span>
+                                                </div>
+                                                <div class="jump-time-block unassembled">
+                                                    <span class="jump-time-block__item jump-time-block__time">11:00</span>
+                                                    <span class="jump-time-block__item jump-time-block__type">Прыжок в тандеме</span>
+                                                    <span class="jump-time-block__item jump-time-block__places"><span>4 из 12</span> <i></i></span>
+                                                </div>
+                                                <div class="jump-time-block hollow">
+                                                    <span class="jump-time-block__item jump-time-block__time">11:00</span>
+                                                    <span class="jump-time-block__item jump-time-block__type">Прыжок в тандеме</span>
+                                                    <span class="jump-time-block__item jump-time-block__places"><span>0 из 12</span> <i></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="jump-booking__next-step-wrapper">
+                                        <button class="btn btn-secondary btn-orange jump-booking__step-btn">Далее</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row jump-booking__step pb-5 inactive">
+                                <div class="col-12">
+                                    <div class="jump-booking__step-header">
+                                        <span class="jump-booking__step-title">02. Количество человек и доп. услуги</span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <h4 class="h4 jump-booking__h4">Количество человек</h4>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div>
+                                        <div class="quantity-regulator">
+                                            <div class="quantity-regulator__left-block">
+                                                <span class="quantity-regulator__icon human-icon"></span>
+                                            </div>
+                                            <div class="quantity-regulator__body">
+                                                <div class="container-calc">
+                                                    <button class="container-calc__btn button-minus">&minus;</button>
+                                                    <div class="container-calc__form">
+                                                        <span>2</span>
+                                                    </div>
+                                                    <button class="container-calc__btn button-plus">+</button>
+                                                </div>
+                                                <span class="quantity-regulator__total">25 000 <i class="icon-currency">&#8381;</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6"></div>
+                                <div class="col-12 mt-5">
+                                    <h4 class="h4 jump-booking__h4">Дополнительные услуги</h4>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div>
+                                        <div class="service-block active">
+                                            <div class="service-block__img">
+                                                <i class="gopro-icon"></i>
+                                            </div>
+                                            <div class="service-block__wrapper">
+                                                <span class="service-block__title">Операторская съемка</span>
+                                                <div class="service-block__container">
+                                                    <div class="service-block__section">
+                                                        <div class="service-block__section-first">
+                                                            <span class="service-block__section-first-title">Количество</span>
+                                                            <div class="container-calc service-block__section-first-calc">
+                                                                <button class="container-calc__btn button-minus">&minus;
+                                                                </button>
+                                                                <div class="container-calc__form">
+                                                                    <span>2</span>
+                                                                </div>
+                                                                <button class="container-calc__btn button-plus">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="service-block__section-second">
+                                                            <button class="btn btn-outline-secondary">Добавить</button>
+                                                        </div>
+                                                    </div>
+                                                    <span class="service-block__price">+ 3 500 <i class="icon-currency">&#8381;</i></span>
+                                                </div>
+                                                <div class="service-block__btnGroup">
+                                                    <button class="btn btn-secondary">Заказать</button>
+                                                    <button class="btn btn-outline-secondary">Отменить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 mt-5 mt-xl-0">
+                                    <div>
+                                        <div class="service-block">
+                                            <div class="service-block__img">
+                                                <i class="gopro-icon"></i>
+                                            </div>
+                                            <div class="service-block__wrapper">
+                                                <span class="service-block__title">Съемка камерой Handycam</span>
+                                                <div class="service-block__container">
+                                                    <div class="service-block__section">
+                                                        <div class="service-block__section-first">
+                                                            <span class="service-block__section-first-title">Количество</span>
+                                                            <div class="container-calc service-block__section-first-calc">
+                                                                <button class="container-calc__btn button-minus">&minus;
+                                                                </button>
+                                                                <div class="container-calc__form">
+                                                                    <span>2</span>
+                                                                </div>
+                                                                <button class="container-calc__btn button-plus">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="service-block__section-second">
+                                                            <button class="btn btn-outline-secondary">Добавить</button>
+                                                        </div>
+                                                    </div>
+                                                    <span class="service-block__price">+ 3 500 <i class="icon-currency">&#8381;</i></span>
+                                                </div>
+                                                <div class="service-block__btnGroup">
+                                                    <button class="btn btn-secondary">Заказать</button>
+                                                    <button class="btn btn-outline-secondary">Отменить</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="jump-booking__next-step-wrapper">
+                                        <button class="btn btn-secondary btn-orange jump-booking__step-btn">Далее</button>
+                                    </div>
+                                </div>
+                            </div> <!--inactive-->
+                            <div class="row jump-booking__step pb-5 inactive">
+                                <div class="col-12">
+                                    <div class="jump-booking__step-header">
+                                        <span class="jump-booking__step-title">03. Сертификаты и оплата</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div>
+                                        <h4 class="h4 jump-booking__h4">Номер сертификата</h4>
+                                        <div class="number-entry-unit">
+                                            <div class="number-entry-unit__img">
+                                                <i class="card-icon"></i>
+                                            </div>
+                                            <div class="number-entry-unit__main">
+                                                <div class="number-entry-unit__input">
+                                                    <span class="number-entry-unit__input-text number-entry-unit__input-text-true">Сертификат верный</span>
+                                                    <span class="number-entry-unit__input-text number-entry-unit__input-text-false">Сертификат не верный</span>
+                                                    <input type="text" placeholder="405 758">
+                                                </div>
+                                                <div class="number-entry-unit__group">
+                                                    <button class="btn btn-outline-secondary">Применить</button>
+                                                    <span class="number-entry-unit__group-discount">- 12 500 <i class="icon-currency">&#8381;</i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 mt-5 mt-xl-0">
+                                    <div>
+                                        <h4 class="h4 jump-booking__h4">Промокод</h4>
+                                        <div class="number-entry-unit">
+                                            <div class="number-entry-unit__img">
+                                                <i class="coupon-icon"></i>
+                                            </div>
+                                            <div class="number-entry-unit__main">
+                                                <div class="number-entry-unit__input">
+                                                    <span class="number-entry-unit__input-text number-entry-unit__input-text-true">Промокод верный</span>
+                                                    <span class="number-entry-unit__input-text number-entry-unit__input-text-false">Промокод не верный</span>
+                                                    <input type="text" placeholder="405 758">
+                                                </div>
+                                                <div class="number-entry-unit__group">
+                                                    <button class="btn btn-outline-secondary">Применить</button>
+                                                    <span class="number-entry-unit__group-discount">- 12 500 <i class="icon-currency">&#8381;</i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 mt-5">
+                                    <div class="number-entry-unit success">
+                                        <div class="number-entry-unit__img">
+                                            <i class="card-icon"></i>
+                                        </div>
+                                        <div class="number-entry-unit__main">
+                                            <div class="number-entry-unit__input">
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-true">Сертификат верный</span>
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-false">Сертификат не верный</span>
+                                                <input type="text" placeholder="405 758">
+                                            </div>
+                                            <div class="number-entry-unit__group">
+                                                <button class="btn btn-outline-secondary">Применить</button>
+                                                <span class="number-entry-unit__group-discount">- 12 500 <i class="icon-currency">&#8381;</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 mt-5">
+                                    <div class="number-entry-unit error">
+                                        <div class="number-entry-unit__img">
+                                            <i class="card-icon"></i>
+                                        </div>
+                                        <div class="number-entry-unit__main">
+                                            <div class="number-entry-unit__input">
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-true">Сертификат верный</span>
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-false">Сертификат не верный</span>
+                                                <input type="text" placeholder="405 758">
+                                            </div>
+                                            <div class="number-entry-unit__group">
+                                                <button class="btn btn-outline-secondary">Применить</button>
+                                                <span class="number-entry-unit__group-discount">- 12 500 <i class="icon-currency">&#8381;</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 mt-5">
+                                    <div class="number-entry-unit success">
+                                        <div class="number-entry-unit__img">
+                                            <i class="coupon-icon"></i>
+                                        </div>
+                                        <div class="number-entry-unit__main">
+                                            <div class="number-entry-unit__input">
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-true">Промокод верный</span>
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-false">Промокод не верный</span>
+                                                <input type="text" placeholder="405 758">
+                                            </div>
+                                            <div class="number-entry-unit__group">
+                                                <button class="btn btn-outline-secondary">Применить</button>
+                                                <span class="number-entry-unit__group-discount">- 12 500 <i class="icon-currency">&#8381;</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 mt-5">
+                                    <div class="number-entry-unit error">
+                                        <div class="number-entry-unit__img">
+                                            <i class="coupon-icon"></i>
+                                        </div>
+                                        <div class="number-entry-unit__main">
+                                            <div class="number-entry-unit__input">
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-true">Промокод верный</span>
+                                                <span class="number-entry-unit__input-text number-entry-unit__input-text-false">Промокод не верный</span>
+                                                <input type="text" placeholder="405 758">
+                                            </div>
+                                            <div class="number-entry-unit__group">
+                                                <button class="btn btn-outline-secondary">Применить</button>
+                                                <span class="number-entry-unit__group-discount">- 12 500 <i class="icon-currency">&#8381;</i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="personal-data personal-data__old">
+                                        <form class="d-flex flex-column" action="">
+                                            <div class="personal-data__wrapper">
+                                                <h4 class="h4 jump-booking__h4">Личные данные</h4>
+                                                <div class="personal-data__checkBox">
+                                                    <input id="checkbox-1" type="checkbox">
+                                                    <label for="checkbox-1">Я уже заказывал на этом сайте</label>
+                                                </div>
+                                            </div>
+                                            <input class="personal-data-input" type="email" placeholder="Email">
+                                            <button class="btn btn-secondary btn-orange jump-booking__step-btn">Оплатить
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-5">
+                                    <div class="d-flex flex-column">
+                                        <h4 class="h4 jump-booking__h4">У вас есть подарочный сертификат или промокод? </h4>
+                                        <button class="btn btn-outline-secondary button-number-certificate">Указать номер
+                                            сертификата
+                                        </button>
+                                        <div class="personal-data personal-data__new">
+                                            <form class="d-flex flex-column" action="">
+                                                <div class="personal-data__wrapper">
+                                                    <h4 class="h4 jump-booking__h4">Личные данные</h4>
+                                                    <div class="personal-data__checkBox">
+                                                        <input id="checkbox-2" type="checkbox">
+                                                        <label for="checkbox-2">Я уже заказывал на этом сайте</label>
+                                                    </div>
+                                                </div>
+                                                <div class="personal-data-form">
+                                                    <input class="personal-data-input" type="text" placeholder="Имя">
+                                                    <input class="personal-data-input" type="text" placeholder="Фамилия">
+                                                    <input class="personal-data-input" type="email" placeholder="Email">
+                                                    <input class="personal-data-input" type="text" placeholder="Телефон">
+                                                </div>
+                                                <div class="personal-data__checkBox ml-0 mb-4 pb-3">
+                                                    <input id="checkbox-21" type="checkbox">
+                                                    <label for="checkbox-21">Я ознакомлен и согласен с обработкой моих личных данных</label>
+                                                </div>
+
+                                                <button class="btn btn-secondary btn-orange jump-booking__step-btn">
+                                                    Оплатить
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="status-order" class="status-order sidebar">
+            <div id="aside1" class="status-order__wrapper">
+                <div class="status-order__block">
+                    <div class="status-order__img"></div>
+                    <div class="status-order__container">
+                        <div class="status-order__container-header">
+                            <div class="status-order__container-header-block">
+                                <span class="status-order__title">Статус заказа</span>
+                                <div class="status-order__footer">
+                                    <span class="status-order__footer-title">Итого</span>
+                                    <p class="status-order__footer-price">12 500 <i class="icon-currency">&#8381;</i></p>
+                                </div>
+                            </div>
+                            <button class="status-order__container-btnMob" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"></button>
+                        </div>
+                        <div class="collapse show" id="collapseExample">
+                            <div class="status-order__list">
+                                <div class="status-order-string status-order__item">
+                                    <span class="status-order-string__title">Дата прыжка</span>
+                                    <p class="status-order-string__value">11.03.2020</p>
+                                </div>
+                                <div class="status-order-string status-order__item">
+                                    <span class="status-order-string__title">Время прыжка</span>
+                                    <p class="status-order-string__value">11:30</p>
+                                </div>
+                                <div class="status-order-string status-order__item">
+                                    <span class="status-order-string__title">Количество прыгающих</span>
+                                    <p class="status-order-string__value">1</p>
+                                </div>
+                                <div class="status-order-string status-order__item">
+                                    <span class="status-order-string__title">Стоимость прыжка</span>
+                                    <p class="status-order-string__value">12 500 <i class="icon-currency">&#8381;</i> </p>
+                                </div>
+                            </div>
+                            <div class="status-order__footer">
+                                <span class="status-order__footer-title">Итого</span>
+                                <p class="status-order__footer-price">12 500 <i class="icon-currency">&#8381;</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<footer id="footer" class="footer">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-lg-5 col-md-7">
+                <div class="footer__first-container">
+                    <div class="footer__schedule">
+                        <span class="footer__title">График работы</span>
+                        <span class="footer__text">Прием заявок:</span>
+                        <span class="footer__text ">ежедневно с <br> 10:00-20:00 <br><br></span>
+                        <span class="footer__text">Лётные дни: Пт-Вс.</span>
+                    </div>
+                    <div class="footer__services">
+                        <span class="footer__title">Услуги</span>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Прыжки в тандеме</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Обучение</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Сертификат на прыжок</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Программа обучения AFF</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="footer__second-container">
+                    <div class="footer__second-container-block">
+                        <span class="footer__title">Меню</span>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Цены</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Виртуальный тур</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Аэродромы</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">О нас</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer__second-container-block">
+                        <span class="footer__title">&nbsp;</span>
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Календарь</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Новости</a>
+                            </li>
+                            <li class="footer__item">
+                                <a class="footer__text" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer__logo-container">
+                    <a class="footer__logo-icon main-logo" href="#"></a>
+                    <p class="footer__logo-copy">Copyright © 2020 DZK</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="footer__info">
+                        <div class="footer__info-wrapper">
+                            <span class="footer__info-text">ИНН/КПП: 6230047043/622501001</span>
+                            <span class="footer__info-text">ОГРН: 1036210009978 ОКАТО 61258873001</span>
+                        </div>
+                        <p class="footer__info-text">Юридический Адрес: 391510, Рязанская обл, Шиловский район, с/п
+                            Ибредское, с. Сасыкино</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <ul class="footer__socialNetwork footer__socialNetwork-list">
+                        <li class="footer__socialNetwork-item">
+                            <a class="footer__socialNetwork-link icon-facebook" href="#"></a>
+                        </li>
+                        <li class="footer__socialNetwork-item">
+                            <a class="footer__socialNetwork-link icon-instagram" href="#"></a>
+                        </li>
+                        <li class="footer__socialNetwork-item">
+                            <a class="footer__socialNetwork-link icon-tripadvisor" href="#"></a>
+                        </li>
+                        <li class="footer__socialNetwork-item">
+                            <a class="footer__socialNetwork-link icon-vk" href="#"></a>
+                        </li>
+                        <li class="footer__socialNetwork-item">
+                            <a class="footer__socialNetwork-link icon-youtube" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script src="main.js"></script>
+
+<script>
+    let isMobile = false;
+    $(document).ready( function() {
+        if ($('body').width() >= 992) {
+            isMobile = true;
+        }
+        if (isMobile) {
+            (function(){
+                var a = document.querySelector('#aside1'), b = null, P = 0;
+                window.addEventListener('scroll', Ascroll, false);
+                document.body.addEventListener('scroll', Ascroll, false);
+                function Ascroll() {
+                    if (b == null) {
+                        var Sa = getComputedStyle(a, ''), s = '';
+                        for (var i = 0; i < Sa.length; i++) {
+                            if (Sa[i].indexOf('box-sizing') === 0 || Sa[i].indexOf('overflow') === 0 || Sa[i].indexOf('width') === 0 || Sa[i].indexOf('padding') === 0 || Sa[i].indexOf('border') === 0 || Sa[i].indexOf('outline') === 0 || Sa[i].indexOf('box-shadow') === 0 || Sa[i].indexOf('background') === 0) {
+                                s += Sa[i] + ': ' +Sa.getPropertyValue(Sa[i]) + '; '
+                            }
+                        }
+                        a.innerHTML = '<div style="'+s+'">'+a.innerHTML+'</div>';
+                        b = a.children[0];
+                        a.style.height = b.getBoundingClientRect().height + 'px';
+                        a.style.padding = '0';
+                        a.style.border = '0';
+                    }
+                    var Ra = a.getBoundingClientRect(),
+                        R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('footer').getBoundingClientRect().top + 0);  // селектор блока, при достижении верхнего края которого нужно открепить прилипающий элемент;  Math.round() только для IE; если ноль заменить на число, то блок будет прилипать до того, как нижний край элемента дойдёт до футера
+                    if ((Ra.top - P) <= 0) {
+                        if ((Ra.top - P) <= R) {
+                            b.className = 'stop';
+                            b.style.top = - R +'px';
+                        } else {
+                            b.className = 'sticky';
+                            b.style.top = P + 'px';
+                        }
+                    } else {
+                        b.className = '';
+                        b.style.top = '';
+                    }
+                }
+            })()
+        }
+    } );
+
+
+    new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+        data () {
+            return {
+                picker: new Date().toISOString().substr(0, 10),
+                picker2: new Date().toISOString().substr(0, 10),
+            }
+        },
+    })
+</script>
+</body>
+</html>
